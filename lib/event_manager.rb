@@ -1,4 +1,8 @@
+require 'csv'
 puts 'EventManager initialized.'
 
-contents = File.read('event_attendees.csv')
-puts contents
+contents = CSV.open('event_attendees.csv', headers: true)
+contents.each do |row|
+  name = row[2]
+  puts name
+end
